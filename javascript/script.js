@@ -97,13 +97,93 @@
 //     btn.removeEventListener('click',show)
 // })
 
-const form=document.querySelector("form")
-form.addEventListener('submit',(event)=>{
-    event.preventDefault()
-    console.log(event.target[0].value)
-    console.log(event.target[1].value)
-    console.log(event)
-    console.log("button Clicked")
-})
+// const form=document.querySelector("form")
+// form.addEventListener('submit',(event)=>{
+//     event.preventDefault()
+//     console.log(event.target[0].value)
+//     console.log(event.target[1].value)
+//     console.log(event)
+//     console.log("button Clicked")
+// })
 
-console.log("Updated code")
+// console.log("Updated code")
+
+// debugger
+// console.log(a)
+// console.log(b)
+
+// debugger
+// var a=3453
+// let b=456;  //script scope for let and const
+
+// console.log(a)
+// console.log(b)
+
+// function print(){
+//     let c=40
+//     console.log("Inside fn")
+// }
+
+// // console.log(c)
+// print()
+
+
+
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+// first()
+
+// function infinite(){
+//     infinite()
+// }
+
+// infinite()
+
+// console.log(a)//TDZ
+// console.log(b)  
+
+
+// let a=34;
+// var b=78
+
+// let total=345;
+
+// function calculate(){
+//     console.log(total)
+//     var total=565
+//     console.log(total)
+// }
+
+// calculate()
+
+
+// console.log("This is the beginning of the code")
+// const timeout=setTimeout(()=>{console.log("After 2 sec")},2000)
+// clearTimeout(timeout)
+// console.log("This is the end of the code")
+
+// const interval=setInterval(()=>{console.log("Printing at every two seconds")},2000)
+
+// setTimeout(()=>{clearInterval(interval)},10000)
+
+// const interval2=setInterval(()=>{console.log("Printing at every two seconds")},2000)
+// console.log(interval2)
+
+
+
+let count=0;
+
+const interval=setInterval(()=>{
+    count+=1
+    console.log(count)
+    if(count===10){
+        clearInterval(interval)
+    }
+},1000)
