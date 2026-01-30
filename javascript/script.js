@@ -178,12 +178,76 @@
 
 
 
-let count=0;
+// let count=0;
 
-const interval=setInterval(()=>{
-    count+=1
-    console.log(count)
-    if(count===10){
-        clearInterval(interval)
+// const interval=setInterval(()=>{
+//     count+=1
+//     console.log(count)
+//     if(count===10){
+//         clearInterval(interval)
+//     }
+// },1000)
+
+// console.log("First line")
+// setTimeout(()=>console.log("inside timeout"),0)
+
+// console.log("last line")
+
+
+// const studentName=document.querySelector('#name')
+// const button=document.querySelector('.btn')
+// const list=document.querySelector('.list')
+
+
+// button.addEventListener('click',()=>{
+
+//     //creating the element
+//    const li= document.createElement('li')
+//    const deleteButton= document.createElement('button')
+//     //providing the text
+//     li.innerText=studentName.value
+//     deleteButton.innerText="Delete"
+
+//     deleteButton.addEventListener('click',()=>{
+//         // li.remove()
+//         list.removeChild(li)
+//     })
+
+//     li.appendChild(deleteButton)
+//     list.appendChild(li)
+//     studentName.value=""
+// })
+
+// function print(name){ //callback fn
+//     console.log("inside print",name)
+// }
+
+// function greet(print){ //higher order fn
+//     setTimeout(()=>{
+//         console.log("Hello students")
+//         let name="Yash"
+//         print(name)
+//     },2000)
+    
+// }
+
+// greet(print)
+
+const p= new Promise((res,rej)=>{
+   console.log("Going to do the homework!!")
+
+   setTimeout(()=>{
+    const done=true;
+    if(done){
+        res("Success")
+    }else{
+        rej("Failed to fetch Data from the server")
     }
-},1000)
+   },3000)
+})
+
+p.then((a)=>{
+    console.log(a)
+}).catch((err)=>{
+    console.log(err)
+})

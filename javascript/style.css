@@ -9,3 +9,12 @@
 .btn2{
     border-radius: 20px;
 }
+
+li{
+    background-color: yellowgreen;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 10px;
+}
