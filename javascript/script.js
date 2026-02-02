@@ -233,21 +233,84 @@
 
 // greet(print)
 
-const p= new Promise((res,rej)=>{
-   console.log("Going to do the homework!!")
+// const p= new Promise((res,rej)=>{
+//    console.log("Going to do the homework!!")
 
-   setTimeout(()=>{
-    const done=true;
-    if(done){
-        res("Success")
-    }else{
-        rej("Failed to fetch Data from the server")
-    }
-   },3000)
+//    setTimeout(()=>{
+//     const done=true;
+//     if(done){
+//         res("Success")
+//     }else{
+//         rej("Failed to fetch Data from the server")
+//     }
+//    },3000)
+// })
+
+// p.then((a)=>{
+//     console.log(a)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+
+function doHomework(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Homework Complete")
+                res("Homework Done!!")
+            }
+            else{
+                rej("Homework not done")
+            }
+        },2000)
+    })
+    return p;
+}
+function eatDinner(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=false;
+            if(done){
+                console.log("Dinner Complete")
+                res("Dinner Done!!")
+            }
+            else{
+                rej("Dinner not done")
+            }
+        },2000)
+    })
+    return p;
+}
+function goToPlayground(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Went to pg")
+                res("PG time")
+            }
+            else{
+                rej("Not Allowed")
+            }
+        },2000)
+    })
+    return p
+}
+
+doHomework().then((data)=>{
+    console.log(data)
+     return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
+}).then((data)=>{
+    console.log(data)
 })
-
-p.then((a)=>{
-    console.log(a)
-}).catch((err)=>{
+.catch((err)=>{
     console.log(err)
+}).finally(()=>{
+    console.log("Go to Sleep")
 })
