@@ -1,12 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import style from "../css/Article.module.css"
 import style1 from "../css/HomePage.module.css"
 // import styled from "styled-components"
 import styled from "@emotion/styled"
 import { css } from '@emotion/react'
+import axios from "axios"
+
 function Article(props) {
   const [count, setCount]=useState(0)
+  const [name, setName]=useState("Alex")
 
+  useEffect(()=>{
+    console.log("Component Mounted")
+
+    return ()=>{
+      console.log("Component Unmounted")
+    }
+  },[name])
+
+  useEffect(()=>{
+    // const fetchData=async()=>{
+    //   const response=await fetch("https://jsonplaceholder.typicode.com/posts",{
+    //     method:"GET"
+    //   })
+    //   const data=await response.json()
+    //   console.log(data)
+    // }
+
+    const fetchData=async()=>{
+      const response=await axios.get("https://jsonplaceholder.typicode.com/posts")
+      console.log(response.data)
+    }
+
+    fetchData()
+  },[])
 
   const handleIncrement=()=>{
     setCount(count+1)
@@ -15,12 +42,15 @@ function Article(props) {
     <div>
       <h1>Article</h1>
        <h3>{props.title}</h3> 
+       <h2>{name}</h2>
+       <button onClick={()=>{setName("John")}}>Change Name</button>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
       <h2>{count}</h2>
       <button className={style.btn} onClick={handleIncrement}>Increment</button>
       <button css={{backgroundColor:"green", color:"white"}}> First</button>
       <Button>Submit</Button>
       <Button yellow >Click Me!</Button>
+      <button className='bg-blue-600 text-white h-10 border-2 border-white rounded-2xl'>Tailwind Button</button>
     </div>
   )
 }
