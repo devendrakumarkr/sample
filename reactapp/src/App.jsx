@@ -3,6 +3,7 @@ import './App.css'
 import TopBar from './component/TopBar'
 import Article from './component/Article'
 import HomePage from './component/HomePage'
+import Contact from './component/Contact'
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
       <HomePage />
       <TopBar />
       <Article title={title} />
+      <Contact/>
+
     </>
   )
 }
