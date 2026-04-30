@@ -1,4 +1,5 @@
 import React from 'react'
+import TopBar from './TopBar';
 
 function HomePage() {
   const loggedin=true;
@@ -12,7 +13,10 @@ function HomePage() {
 //     )
 //   }
     return (
-        loggedin?<button>Logout</button>:<button>Login</button>
+        <>
+        <TopBar />
+        {loggedin?<button>Logout</button>:<button>Login</button>}
+        </>
     )
 }
 

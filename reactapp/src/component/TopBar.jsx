@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import Child from './Child'
+
 
 function TopBar() {
   return (
@@ -12,6 +14,7 @@ function TopBar() {
         <Link to="/article"><li>Article</li></Link>
         <Link to="/contact"><li>Contact</li></Link>
       </ul>
+      <Child />
     </div>
   )
 }
