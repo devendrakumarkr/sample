@@ -5,6 +5,7 @@ import Article from './component/Article'
 import HomePage from './component/HomePage'
 import Contact from './component/Contact'
 import { Route, Routes } from 'react-router-dom'
+import Profile from './component/Profile'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<><HomePage /><TopBar /></>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/article" element={<Article  title={title}  />} />
+        <Route path='/profile/:username' element={<Profile />} />
       </Routes>
 
     </>
