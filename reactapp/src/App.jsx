@@ -4,6 +4,7 @@ import TopBar from './component/TopBar'
 import Article from './component/Article'
 import HomePage from './component/HomePage'
 import Contact from './component/Contact'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -12,10 +13,11 @@ function App() {
 
   return (
     <>
-      <HomePage />
-      <TopBar />
-      <Article title={title} />
-      <Contact/>
+      <Routes>
+        <Route path="/" element={<><HomePage /><TopBar /></>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/article" element={<Article  title={title}  />} />
+      </Routes>
 
     </>
   )
