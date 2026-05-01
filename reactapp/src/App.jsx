@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom'
 import Profile from './component/Profile'
 import { UserContext } from './UserContext'
 import Search from './component/Search'
+import Product from './component/Product'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/article" element={<Article  title={title}  />} />
           <Route path='/profile/:username' element={<Profile />} />
           <Route path='/search' element={<Search />} />
+          <Route path='/products' element={<Product />} />
         </Routes>
       </UserContext.Provider>
 
